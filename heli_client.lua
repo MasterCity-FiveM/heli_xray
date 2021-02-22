@@ -21,6 +21,7 @@ local vision_state = 0 -- 0 is normal, 1 is nightmode, 2 is thermal vision
 Citizen.CreateThread(function()
 	while true do
         Citizen.Wait(0)
+		helicam = false
 		if IsPlayerInPolmav() then
 			local lPed = GetPlayerPed(-1)
 			local heli = GetVehiclePedIsIn(lPed)
@@ -132,6 +133,8 @@ Citizen.CreateThread(function()
 			SetNightvision(false)
 			SetSeethrough(false)
 		end
+	else
+		Citizen.Wait(5000)
 	end
 end)
 
