@@ -3,6 +3,7 @@
 
 RegisterServerEvent('heli:spotlight')
 AddEventHandler('heli:spotlight', function(state)
+	ESX.RunCustomFunction("anti_ddos", source, 'heli:spotlight', {state = state})
 	local serverID = source
 	TriggerClientEvent('heli:spotlight', -1, serverID, state)
 end)
